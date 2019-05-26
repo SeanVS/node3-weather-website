@@ -32,7 +32,8 @@ const forecast = (latitude, longitude, callback) =>
                     temperature: body.currently.temperature,
                     precipitation_chance: body.currently.precipProbability,
                     forecast: body.currently.summary + '. The temperature is currently ' 
-                    + body.currently.temperature + ' degrees (c), and the chance for rain is ' + body.currently.precipProbability + '%'
+                    + body.currently.temperature + ' degrees (c), and the chance for rain is ' + (body.currently.precipProbability  * 100) + '%. Wind speed is currently ' 
+                    + body.currently.windSpeed
                 })
         }
     })
